@@ -1,0 +1,25 @@
+{% extends 'home/base.html'%}
+{% block title %}REVIEWS{% endblock %}
+{% block content%}
+{% load crispy_forms_tags %}
+
+
+<div class="container">
+    <div class="row my-4 justify-content-center">
+        <div class="col-md-6">
+            <div class="border bg-white p-3">
+                <h4 class="text-center text-white" style="background-color: #301e4e;">Add Review</h4>
+                <hr>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{review_form|crispy}}
+                    <input class="btn text-white btn-block" type="submit" value="Add"
+                        style="background-color: #301e4e;">
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--End Table-->
+{% endblock%}

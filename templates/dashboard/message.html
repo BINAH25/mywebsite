@@ -1,0 +1,41 @@
+{% extends 'home/base.html'%}
+{% block title %}MESSAGES{% endblock %}
+{% block content%}
+{% include 'home/card.html'%}
+
+
+
+<!--Graphs-->
+
+<div class="container">
+    <div class="row my-4">
+        <div class="col-md-12">
+            <table class="table bg-white">
+                <thead class="" style="background:  #301e4e;">
+                    <tr class="text-white">
+                        <th scope="col">Firstname</th>
+                        <th scope="col">Lastname</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for message in messages %}
+                    <tr>
+                        <td>{{message.firstname}}</td>
+                        <td>{{message.lastname}}</td>
+                        <td>{{message.email}}</td>
+                        <td> <textarea name="" id="" cols="30" rows="4"
+                                style="outline: none; border: none; resize: none;">{{message.message}}</textarea></td>
+
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+<!--End Table-->
+{% endblock%}
